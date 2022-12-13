@@ -23,7 +23,7 @@ arrayStats.push(playerLaura);
 
 console.log("Los jugadores son:");
 console.log(arrayStats); //muestra jugadores por consola
-//alert("Bienvenido a las Estadisticas de los jugadores"); //Bienvenida
+alert("Bienvenido a las Estadisticas de los jugadores"); //Bienvenida
 
 
 //Menu
@@ -58,7 +58,7 @@ do {
         salir=true
     }
 } while (salir==false);
-//alert("Hasta Luego!");
+alert("Hasta Luego :)");
 //Opciones:
 
 //Alta Jugador nuevo
