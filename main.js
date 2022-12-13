@@ -83,36 +83,39 @@ function altaPlayer() {
 //Baja Jugador
 function bajaPlayer() {
     let name=prompt("Ingrese el nombre: ");
-    let player=arrayStats.find(Player => Player.name == name);
-    let indice=arrayStats.indexOf(player);
-    arrayStats.splice(indice, 1);
+    let player=arrayStats.find(Player => Player.name.toLowerCase() == name.toLowerCase());
     if (player==undefined){
         alert("Jugador no encontrado, ingrese a la lista para verificar el nombre (Opcion 4)");
     } else {
         console.log("Jugador Eliminado: ");
+        alert("jugador Eliminado: "+player.name);
         console.log(player);
+        let indice=arrayStats.indexOf(player);
+        arrayStats.splice(indice, 1);
     }
 }
 
 //Modificar Jugador
 function modificarPlayer() {
     let name = prompt("Ingrese el nombre: ");
-    let player = arrayStats.find(Player => Player.name == name);
+    let player = arrayStats.find(Player => Player.name.toLowerCase() == name.toLowerCase());
     let id = arrayStats.indexOf(player);
+    let nameNew, mail,age,score=""; //validaciones
     if (player==undefined){
         alert("Jugador no encontrado, ingrese a la lista para verificar el nombre (Opcion 4)");
     } else {
-        let nameNew = prompt("Jugador Seleccionado: "+player.name+"\n\nIngrese nuevo nombre:");
-        let mail = prompt("Mail actual: "+player.mail+"\n\nIngrese nuevo mail:");
-
-        let age,score=""; //validaciones
-    do {
-        age=prompt("Edad actual: "+player.age+"\n\nIngrese nueva edad:");
-    } while (age == null || age == "" || patron.test(age));
-
-    do {
-        score=prompt("Score actual: "+player.score+"\n\nIngrese nuevo score:");
-    } while (score == null || score == "" || patron.test(score));
+        do {
+            nameNew=prompt("Jugador Seleccionado: "+player.name+"\n\nIngrese nuevo nombre:");
+        } while (nameNew == null || nameNew == "" || nameNew == " ");
+        do {
+            mail=prompt("Mail actual: "+player.mail+"\n\nIngrese nuevo mail:");
+        } while (mail == null || mail == ""|| mail == " ");
+        do {
+            age=prompt("Edad actual: "+player.age+"\n\nIngrese nueva edad:");
+        } while (age == null || age == "" || patron.test(age));
+        do {
+            score=prompt("Score actual: "+player.score+"\n\nIngrese nuevo score:");
+        } while (score == null || score == "" || patron.test(score));
     
         let playerModificado = new Player(nameNew, mail, age, score);
         arrayStats.splice(id, 1, playerModificado);
