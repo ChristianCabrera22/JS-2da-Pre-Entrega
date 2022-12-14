@@ -18,7 +18,7 @@ const playerAle = new Player("Alex22", "jlopez.22@sodimac.com", 18, 2546);
 arrayStats.push(playerAle);
 const playerJota = new Player("JotaFx", "jota.elcrack@gmail.com", 17, 4584);
 arrayStats.push(playerJota);
-const playerLaura = new Player("Lauras♥", "lau.la_linda@hotmail.com", 25, 7495);
+const playerLaura = new Player("Lauras", "lau.la_linda@hotmail.com", 25, 7495);
 arrayStats.push(playerLaura);
 
 console.log("Los jugadores son:");
@@ -142,7 +142,7 @@ function top3() {
     let mensaje2="";
     for (let i=0;i<3; i++) {
         player=arrayTop3[i];
-        mensaje=("Jugador: "+player.name+"         Score: "+player.score+"\n");
+        mensaje=("Top "+(i+1)+":  "+player.name+"         Score: "+player.score+"\n");
         mensaje2=mensaje2+mensaje;
     }
     alert("Top3:\n\n"+mensaje2);
